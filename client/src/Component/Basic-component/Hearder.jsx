@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
+import user from '../../assets/images/avatar.png'
+import { AiOutlineBars } from 'react-icons/ai'
+import { RxCross1 } from 'react-icons/rx'
 const Header = () => {
     const location = useLocation();
     const { pathname } = location;
     const splitLocation = pathname.split("/");
+    const [clicked, Setclicked] = useState(false);
+    const [mobile, Setmobile] = useState(false);
+
 
     return (
         <div className="navbar">
@@ -13,22 +19,29 @@ const Header = () => {
                 <span>Khazina</span>
             </div>
             <div className="list-navbar">
-                <ul className='nav'>
-                    <li>{splitLocation[1]}</li>
-                    {/* Checking the current path name using javascript ternary operator and if true adding active classname to it */}
-                    <li className={splitLocation[1] === "" ? "active" : ""}>
-                        <Link to='/'>Home</Link>
+                <ul className={mobile ? 'mobile-nav' : 'nav'} onClick={() => Setmobile(false)}>
+                    <li >
+                        <Link className={splitLocation[1] === "" ? "active" : ""} to='/'>Home</Link>
                     </li>
-                    <li className={splitLocation[1] === "about" ? "active" : ""}>
-                        <Link to='/about'>About</Link>
+                    <li >
+                        <Link className={splitLocation[1] === "about" ? "active" : ""} to='/about'>About</Link>
                     </li>
-                    <li className={splitLocation[1] === "detail" ? "active" : ""}>
-                        <Link to='/detail'>About</Link>
+                    <li >
+                        <Link className={splitLocation[1] === "service" ? "active" : ""} to='/service'>Service</Link>
+                    </li>
+                    <li >
+                        <Link className={splitLocation[1] === "menu" ? "active" : ""} to='/menu'>Menu</Link>
                     </li>
                 </ul>
+                <div className="user-detail">
+                    <span>A</span>
+                    <img src={user} alt="" />
+                </div>
+                <button className="menu-button" onClick={() => Setmobile(!mobile)}>
+                    {mobile ? <h2><RxCross1 /></h2> : <h2><AiOutlineBars /></h2>}
+                </button>
+
             </div>
-
-
         </div>
     )
 }
