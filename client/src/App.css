@@ -7,10 +7,11 @@
 }
 
 :root {
-  --blue: #323ea8;
+  --orange: #fc7703;
   --white: #fff;
   --black: #333;
   --grey: #666;
+
   --trasition: all 0.3s linear;
 }
 
@@ -21,7 +22,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: #333; */
 }
 
 .navbar .logo {
@@ -37,7 +37,6 @@
 .navbar .logo>img {
   width: 4rem;
   height: 4rem;
-  /* object-fit: cover; */
 }
 
 .navbar .logo>span {
@@ -70,8 +69,8 @@
 
 .list-navbar .nav li a:hover,
 .list-navbar .nav li .active {
-  border-bottom: 3px solid var(--blue);
-  color: var(--blue);
+  border-bottom: 3px solid var(--orange);
+  color: var(--orange);
 }
 
 /* Menu button */
@@ -140,6 +139,6 @@
 
 .list-navbar .mobile-nav li a:hover,
 .list-navbar .mobile-nav li .active {
-  border-bottom: 3px solid var(--blue);
-  color: var(--blue);
+  border-bottom: 3px solid var(--#fc7703);
+  color: var(--#fc7703);
 }

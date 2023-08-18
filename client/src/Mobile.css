@@ -30,8 +30,8 @@
 }
 
 @media(max-width:560px) {
-    .list-navbar .nav {
-        width: 35%;
+    .navbar .mobile-nav {
+        width: 40%;
     }
 
     .menu-button {
@@ -58,8 +58,8 @@
         font-weight: 500;
     }
 
-    .navbar .nav {
-        width: 47%;
+    .navbar .mobile-nav {
+        width: 55%;
     }
 
     .user-detail {
