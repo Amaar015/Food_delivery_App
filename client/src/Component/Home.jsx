@@ -3,6 +3,8 @@ import { useLocation, Link } from 'react-router-dom'
 
 import Header from './Basic-component/Hearder'
 import { MdOutlineDirectionsBike } from 'react-icons/md'
+import { BiSolidCart } from 'react-icons/bi';
+
 import Product from '../Data/Product'
 import Fruits from '../Data/Fruits'
 import back from '../assets/images/herobg.png'
@@ -11,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, } from 'swiper/modules';
+import Footer from './Basic-component/Footer';
 
 const Home = () => {
     const location = useLocation();
@@ -80,8 +83,8 @@ const Home = () => {
                         className="mySwiper"
                     >
                         {Fruits.map((fruits) => (
-                            <SwiperSlide>
-
+                            <SwiperSlide >
+                                <BiSolidCart className='icon' />
                                 <img src={fruits.image} alt="" />
                                 <h3>{fruits.name}</h3>
                                 <span>{fruits.description}</span>
@@ -98,33 +101,56 @@ const Home = () => {
                     <div className="line"></div>
 
                     <div className="categories">
-                        <div className="category">
-                            <ul>
-                                <li >
-                                    <Link className={splitLocation[1] === "" ? "selected" : ""} to=''>Chicken</Link>
-                                </li>
-                                <li >
-                                    <Link className={splitLocation[1] === "about" ? "selected" : ""} to=''>Curry</Link>
-                                </li>
-                                <li >
-                                    <Link className={splitLocation[1] === "service" ? "selected" : ""} to=''>Rice</Link>
-                                </li>
-                                <li >
-                                    <Link className={splitLocation[1] === "menu" ? "selected" : ""} to=''>Fish</Link>
-                                </li>
-                                <li >
-                                    <Link className={splitLocation[1] === "service" ? "selected" : ""} to=''>IceCream</Link>
-                                </li>
-                                <li >
-                                    <Link className={splitLocation[1] === "menu" ? "selected" : ""} to=''>Soft Berries</Link>
-                                </li>
-                            </ul>
-                        </div>
+
+                        <ul className="category">
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "" ? "selected" : ""} to=''>Chicken</Link>
+                            </li>
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "curry" ? "selected" : ""} to=''>Curry</Link>
+                            </li>
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "rice" ? "selected" : ""} to=''>Rice</Link>
+                            </li>
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "fish" ? "selected" : ""} to=''>Fish</Link>
+                            </li>
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "cream" ? "selected" : ""} to=''>Fruits</Link>
+                            </li>
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "cream" ? "selected" : ""} to=''>IceCream</Link>
+                            </li>
+                            <li >
+                                < BiSolidCart className='span' />
+                                <Link className={splitLocation[1] === "soft" ? "selected" : ""} to=''>Soft Berries</Link>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div className="filter-product">
+                        {Fruits.map((fruit) => (
+                            <div className='product-box'>
+
+                                <img src={fruit.image} alt="" />
+                                {/* <BiSolidCart className='icon' /> */}
+                                <h3>{fruit.name}</h3>
+                                <p>{fruit.description}</p>
+                                <p>${fruit.price}</p>
+                            </div>
+                        ))}
                     </div>
 
                 </div>
             </div>
-
+            <Footer />
         </>
     )
 }
