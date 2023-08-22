@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { BsFacebook, BsInstagram, BsGoogle, BsTwitter, BsLinkedin, BsMessenger } from 'react-icons/bs'
 const Footer = () => {
     return (
         <div className='footer'>
@@ -7,12 +7,12 @@ const Footer = () => {
                 <p>Get Connected with us on social networks:</p>
 
                 <ul>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
+                    <li><BsFacebook /></li>
+                    <li><BsInstagram /></li>
+                    <li><BsGoogle /></li>
+                    <li><BsTwitter /></li>
+                    <li><BsLinkedin /></li>
+                    <li><BsMessenger /></li>
                 </ul>
             </div>
             <div className="footer-detail">
@@ -47,6 +47,9 @@ const Footer = () => {
                         <li>+923043042589</li>
                     </ul>
                 </div>
+            </div>
+            <div className="copy-right">
+                All right &copy; Reserved By @Amaar Hassnain
             </div>
         </div>
     )

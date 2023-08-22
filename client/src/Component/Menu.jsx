@@ -1,12 +1,13 @@
 import React from 'react'
 import Header from './Basic-component/Hearder'
+import Footer from './Basic-component/Footer'
 
 
 const Menu = () => {
     return (
         <div className="menu">
             <Header />
-            <h2>Menu</h2>
+            <Footer />
         </div>
     )
 }
