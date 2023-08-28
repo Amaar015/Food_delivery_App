@@ -10,6 +10,7 @@ const Header = () => {
     const splitLocation = pathname.split("/");
     const [clicked, Setclicked] = useState(false);
     const [mobile, Setmobile] = useState(false);
+    const [cart, Setcart] = useState(false);
 
 
     return (
@@ -40,7 +41,44 @@ const Header = () => {
                 <button className="menu-button" onClick={() => Setmobile(!mobile)}>
                     {mobile ? <h2><RxCross1 /></h2> : <h2><AiOutlineBars /></h2>}
                 </button>
+                <div className="cart">
+                    <div className="buttons">
+                        <button className="cart-button">A</button>
+                        <span className="cart-button">Cart</span>
+                        <button className="cart-button">Clear</button>
+                    </div>
+                    <div className="cart-product">
+                        <div className="cart-product-box">
+                            <img src={user} alt="" />
+                            <div>
+                                <h6>Strawberries</h6>
+                                <span>$ 5.89</span>
+                            </div>
+                            <div className="counter-cart">
+                                <button className='counter-btn'>-</button>
+                                <p>1</p>
+                                <button className='counter-btn'>+</button>
+                            </div>
+                        </div>
 
+                        <div className="cart-pricing">
+                            <div className="item-price">
+                                <span>Sub Total</span>
+                                <span>$ 5.75</span>
+                            </div>
+                            <div className="item-price">
+                                <span>Delivery</span>
+                                <span>$ 1.75</span>
+                            </div>
+                            <hr />
+                            <div className="total-amount">
+                                <span>Total</span>
+                                <span>$ 7.25</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     )
